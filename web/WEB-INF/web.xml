@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>filter.filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/add</url-pattern>
+        <url-pattern>/update</url-pattern>
+        <url-pattern>/listPerson.jsp</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>controller.logoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchController</servlet-name>
+        <servlet-class>controller.searchController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchController</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
